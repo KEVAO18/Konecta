@@ -44,3 +44,4 @@ SELECT producto_id, SUM(unidades) AS unidadesTotales FROM ventas GROUP BY ventas
 ## Notas
 - [Hoja de vida actualizada](http://kevaodv.tech/assets/docs/CV1.pdf)
 - [Portfolio](http://kevaodv.tech/home)
+- [GITHUB](https://github.com/KEVAO18)
