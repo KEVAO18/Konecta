@@ -21,14 +21,8 @@ require_once("../serve.php");
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
 				<ul class="navbar-nav">
-					<li class="nav-item dropdown">
-						<button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-							Control de Inventario
-						</button>
-						<ul class="dropdown-menu dropdown-menu-dark">
-							<li><a class="dropdown-item" href="">Ingresados</a></li>
-							<li><a class="dropdown-item" href="">En stock</a></li>	
-						</ul>
+					<li class="nav-item ">
+						<a class="nav-link" href="<?=$_ENV['PAGE_SERVE']?>venta">Ventas</a>
 					</li>
 				</ul>
 			</div>

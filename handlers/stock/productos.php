@@ -23,6 +23,10 @@ class productos extends sqlController{
         return $this->datos->All('productos');
     }
 
+    public function column($columnas){
+        return $this->datos->AnyColumn("productos", $columnas);
+    }
+
     public function insertarDatos($Nombre, $Referencia, $Precio, $peso, $categoria, $stock, $FechaCreacion){
         $this->datos->insert(
             'productos', 

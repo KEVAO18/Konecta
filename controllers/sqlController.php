@@ -231,32 +231,31 @@ class sqlController extends conexionController{
 	 * 
 	 * @param string $unirCon tabla secundaria de la union
 	 * 
-	 * @param string $unirCon2 tabla tercearia de la union
-	 * 
-	 * @param string $condicionante columna usada como indice o indicador en la condicion, normamente es la llave primaria
-	 * 
-	 * @param string $condicionante2 columna usada como indice o indicador en la segunda condicion, normamente es la llave primaria
+	 * @param string $condicionante columna usada como indice o indicador en la condicion
 	 * 
 	 * @param string $condicion valor a buscar para realizar el emparejamiento y finalizar la union
 	 * 
-	 * @param string $condicion2 segundo valor a buscar para realizar el emparejamiento y finalizar la union
+	 * @method leftJoin($tabla, $columnas, $unirCon, $condicionante, $condicion) metodo usado para optener tablas unidas por un elemento en comun
 	 * 
-	 * @param string $condicionadoW condicionante o columna de condion del where
-	 * 
-	 * @param string $condicionW valor o condicion del where
-	 * 
-	 * @param string $oper valor definido para eloperador de la comparacion, es = por defecto
-	 * 
-	 * @method function innerJoinConWhere($tabla, $columnas, $unirCon, $unirCon2, $condicionante, $condicionante2, $condicion, $condicion2, $condicionW, $condicionadoW, $oper = '=') metodo usado para unir tablas con un where añadido para optener datos más precisos
-	 * 
-	 * @method function innerJoinConDoble($tabla, $columnas, $unirCon, $unirCon2, $condicionante, $condicionante2, $condicion, $condicion2, $condicionW, $condicionadoW) metodo usado para unir tablas con un where añadido para optener datos más precisos
-	 * 
+	 * @return PDO tablas unidas
 	 */
 
-	public function innerJoinConDoble ($tabla, $columnas, $unirCon, $unirCon2, $condicionante, $condicionante2, $condicion, $condicion2, $condicionW, $condicionadoW, $oper = '='){
-		return $this->consultaSQL("SELECT $columnas FROM $tabla INNER JOIN $unirCon ON $condicionante = $condicion INNER JOIN $unirCon2 ON $condicionante2 = $condicion2 WHERE $condicionW $oper $condicionadoW");
+	public function leftJoin($tabla, $columnas, $unirCon, $condicionante, $condicion){
+		return $this->consultaSQL("SELECT $columnas FROM $tabla LEFT JOIN $unirCon ON $condicionante = $condicion");
 	}
 
+	/**
+	 * 
+	 * @param string $tabla es la tabla principal, la cual funciona como base para la union
+	 * 
+	 * @param string $columnas columnas que se desean unir
+	 * 
+	 * @param string $columnas 
+	 * 
+	 * @method LastRow($tabla, $ordenamiento, $columnas) metodo usado para optener la ultima fila de una tabla
+	 * 
+	 * @return PDO ultima columna
+	 */
 	public function LastRow($tabla, $ordenamiento, $columnas){
 		return $this->consultaSQL("SELECT $columnas FROM $tabla ORDER BY $ordenamiento DESC LIMIT 1");
 	}

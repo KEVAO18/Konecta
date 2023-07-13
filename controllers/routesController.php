@@ -37,7 +37,7 @@ class routesController{
                 break;
 
             case "venta":
-                include_once '../web/stock/'.$ruta[0].'.php';
+                include_once '../web/venta/'.$ruta[0].'.php';
                 venta();
                 break;
 
