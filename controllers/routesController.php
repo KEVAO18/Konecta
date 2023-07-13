@@ -31,6 +31,11 @@ class routesController{
                 insertar();
                 break;
 
+            case "update":
+                include_once '../web/stock/'.$ruta[0].'.php';
+                update($ruta[1]);
+                break;
+
             case "e403":
                 echo $ruta[0];
                 break;

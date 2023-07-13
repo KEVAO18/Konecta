@@ -65,7 +65,6 @@ function insertar(){
                             <input type="date" class="form-control" maxlength="9" id="fecha" aria-describedby="fechaLabel" name="fecha">
                         </div>
                     </div>
-
                 </div>
                 <div class="d-grid gap-4">
                     <button type="submit" class="btn btn-outline-dark">Añadir producto</button>
