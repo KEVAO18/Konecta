@@ -149,6 +149,7 @@ class sqlController extends conexionController{
 
 	public function delete($tabla, $columna, $val, $oper = '='){
 		$q = $this->consultaSQL("DELETE FROM $tabla WHERE $columna $oper '$val'");
+		$q = $this->consultaSQL("ALTER TABLE $tabla AUTO_INCREMENT = 0");
 	}
 
 	/**

@@ -36,6 +36,11 @@ class routesController{
                 update($ruta[1]);
                 break;
 
+            case "venta":
+                include_once '../web/stock/'.$ruta[0].'.php';
+                venta();
+                break;
+
             case "e403":
                 echo $ruta[0];
                 break;

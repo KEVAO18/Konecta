@@ -51,7 +51,7 @@ function productos(){
                         <td><?=$data['Stock']?></td>
                         <td><?=$data['FechaCreacion']?></td>
                         <td>
-                            <a href="<?=$_ENV['PAGE_SERVE']?>delete" class="btn btn-danger">Eliminar</a>
+                            <a href="<?=$_ENV['PAGE_SERVE']?>handlers/stock/delete.php?id=<?=$data['ID']?>" class="btn btn-danger">Eliminar</a>
                             <a href="<?=$_ENV['PAGE_SERVE']?>update/<?=$data['ID']?>" class="btn btn-warning">actualizar</a>
                         </td>
                     </tr>
